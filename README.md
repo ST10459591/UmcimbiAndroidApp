@@ -1,0 +1,2 @@
+# UmcimbiAndroidApp
+Events Planning App
