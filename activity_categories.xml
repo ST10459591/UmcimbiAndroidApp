@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="‹"
+                android:textSize="32sp"
+                android:textColor="#111111" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="UMCIMBI"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#111111" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose a service for your event."
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/cateringButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Catering"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_outline"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/venueButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Venues"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_outline"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/photographyButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Photography"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_outline"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/decorButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Decor"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_outline"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/musicButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Music &amp; Entertainment"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_outline"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/transportButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Transport"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_outline"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

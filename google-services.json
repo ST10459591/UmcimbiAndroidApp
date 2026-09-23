@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751516245530",
+    "project_id": "umcimbi",
+    "storage_bucket": "umcimbi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751516245530:android:3d9cafce8cffad9a8ebba3",
+        "android_client_info": {
+          "package_name": "com.example.umcimbisa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUKxUF1bANLQJSU0YbUblunZMvSGbRMh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
