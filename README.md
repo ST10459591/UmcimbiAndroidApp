@@ -158,6 +158,7 @@ Version control helps keep the project organised and makes it easier to identify
 
 The project contains Kotlin files, XML layouts, drawable resources and other files needed to run the application.
 
+<img width="1902" height="998" alt="image" src="https://github.com/user-attachments/assets/c23eae81-5d8e-4249-8e2e-2a4e74ed201d" />
 
 This screenshot shows the UMCIMBI project repository and the files used during development.
 
@@ -187,95 +188,103 @@ The application was tested using an Android emulator and Android application to 
 
 ## Application Screenshots and Functional Testing
 
-## 9.1 Explore Categories
+## Explore Categories
 <img width="1080" height="2400" alt="Screenshot_20261106_134738" src="https://github.com/user-attachments/assets/be36b416-8ea1-4fb5-8524-1e9d2493045e" />
 
 This screen displays different event service categories. Customers can choose the type of service they need for their event.
 
-**9.2 Service Providers**
+## Service Providers
 
 <img width="1080" height="2400" alt="Screenshot_20261106_134941" src="https://github.com/user-attachments/assets/585cb277-d297-4b83-b83d-9fe0fdaf9334" />
 
 This screen displays service providers under the selected category. Customers can view business names, locations, prices and availability.
 
-**9.3 Search Services**
+## Search Services
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135016" src="https://github.com/user-attachments/assets/bb2bf16d-a6d9-4540-8ae6-e266389ac168" />
+<img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/3537488c-8d6c-4dcf-863e-17ed161c7f49" />
 
 This screen allows customers to search for service providers. The application displays matching businesses using information retrieved from Firebase Firestore.
 
-**9.4 Provider Profile**
+## Provider Profile
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135236" src="https://github.com/user-attachments/assets/8be08b12-511e-47ec-9863-89a4dd119d90" />
+<img width="1913" height="952" alt="image" src="https://github.com/user-attachments/assets/a8f0097f-e739-4723-af1c-6ca1d1a7cd21" />
 
-This screen displays information about a selected service provider, including business details, photographs, pricing, availability and contact information.
+The provider profile displays information about the selected business, including its name, category, description, location, pricing, availability and contact information.
 
-Customers can also send messages, request bookings and save providers to their favourites.
+The profile also displays business photographs uploaded and stored using Cloudinary.
 
-**9.5 Contact Provider**
+These photographs allow customers to see examples of the provider's work before making a booking.
+
+Customers can also contact the provider, send messages, request bookings and add the business to their favourites.
+
+## Contact Provider
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135320" src="https://github.com/user-attachments/assets/558bc10b-2f4e-4562-bcd4-d4b8af6442f1" />
 
 This screenshot shows that customers can access the phone's dialler using the contact information provided by the business.
 
-**9.6 Messaging**
+## Messaging
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135419" src="https://github.com/user-attachments/assets/3edc523f-2584-44c6-8eac-9b8e11053754" />
 <img width="1080" height="2400" alt="Screenshot_20261106_135817" src="https://github.com/user-attachments/assets/4deeecc5-8674-452f-9dd6-89887eafdc0f" />
 
 These screens show how customers can communicate with service providers and view their conversations.
 
-**9.7 Booking Request**
+## Booking Request
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135541" src="https://github.com/user-attachments/assets/bac92ba2-21d5-4eb5-9499-680d9add5fe5" />
 
 This screen allows customers to enter their event information and submit a booking request to a service provider.
 
-**9.8 Booking Status**
+## Booking Status
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135704" src="https://github.com/user-attachments/assets/8125d8f7-fa5c-456a-b63a-f3631bc7538b" />
 
 This screenshot shows the customer's booking request with a pending status after submission.
 
-**9.9 Provider Booking Management**
+## Provider Booking Management
 
 <img width="1080" height="2400" alt="Screenshot_20261106_163538" src="https://github.com/user-attachments/assets/9b812d61-c8b9-49fc-825c-d6ea778b604a" />
 
 This screen shows how a service provider can view a customer's booking request and choose to accept or reject it.
 
-**9.10 Booking Confirmation**
+## Booking Confirmation
 
 <img width="1080" height="2400" alt="Screenshot_20261106_163755" src="https://github.com/user-attachments/assets/6cbdec30-c826-4e78-a890-db48ed10060b" />
 
 This screenshot shows that the customer's booking status changes to accepted after the service provider approves the request.
 
-**9.11 Favourites**
+## Favourites
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135835" src="https://github.com/user-attachments/assets/f5fb1d02-256d-4fa1-a20e-87d59cfe18e8" />
 
 This screen displays service providers saved by the customer for future reference.
 
-**9.12 Profile and Settings**
+## Profile and Settings
 
 <img width="1080" height="2400" alt="Screenshot_20261106_135911" src="https://github.com/user-attachments/assets/56c62c7f-71ab-46ef-94f4-f20ed3981e23" />
 <img width="1080" height="2400" alt="Screenshot_20261106_140000" src="https://github.com/user-attachments/assets/545f1507-ee09-4f3f-9d85-2bc6776f015e" />
 
 These screens show the user's profile information, language selection, notification preferences and appearance settings.
 
-**9.13 Dark Mode**
+## Dark Mode
 
 <img width="1080" height="2400" alt="Screenshot_20261106_140038" src="https://github.com/user-attachments/assets/28d1295d-60b9-4436-865f-e3f79eb94f96" />
 
 This screenshot demonstrates the appearance of the application when dark mode is enabled.
 
-**9.14 Multilingual Support**
+## Multilingual Support
 
 <img width="1080" height="2400" alt="Screenshot_20261106_140111" src="https://github.com/user-attachments/assets/f10078da-5fb0-4815-a7d6-03ecfa531dcb" />
 <img width="1080" height="2400" alt="Screenshot_20261106_140123" src="https://github.com/user-attachments/assets/9e843f12-4982-4100-8964-4d5015f2ab59" />
+<img width="1080" height="2400" alt="Screenshot_20261106_204116" src="https://github.com/user-attachments/assets/1d28e450-6ecd-4ac1-a257-205e9619a62b" />
+<img width="1080" height="2400" alt="Screenshot_20261106_204116" src="https://github.com/user-attachments/assets/4bbe38be-d9ed-4d34-b60c-07cef494004b" />
 
-These screenshots demonstrate how the application displays translated text when Sesotho is selected.
+These screenshots demonstrate how the application displays translated text when Sesotho and IsiZulu is selected.
 
-### 10. Testing and Results
+## Testing and Results
 
 Manual testing was carried out to check whether the application's main features worked as expected.
 
@@ -314,11 +323,38 @@ UMCIMBI is a mobile application developed to make event planning easier for cust
 
 The application allows customers to browse services, search for providers, view business profiles, communicate with businesses and submit booking requests.
 
-## References
-
-
 Service providers can advertise their services and manage customer booking requests.
 
 The application also includes favourites, account settings, local data storage and multilingual support.
 
 Overall, UMCIMBI demonstrates how a mobile application can bring different event services together on one platform and make the event planning process more convenient.
+
+## AI Write Up
+During the development of UMCIMBI, I used AI tools to help me with certain parts of the project.
+
+I used Gemini AI in Android Studio whenever I came across coding challenges or errors that I did not fully understand. It helped me understand error messages, identify possible problems and find ways to fix them. This also helped me learn more about Kotlin and Android development.
+
+I also used Stitch AI to create mockups for my UMCIMBI application. These mockups helped me visualise how I wanted the application to look and gave me ideas for the layout, colours, buttons and overall design. I used them as a guide when creating the actual screens in Android Studio.
+
+Although I used these AI tools for guidance and support, I was responsible for developing the application, making changes to the code, testing the features and deciding on the final design.
+
+Overall, these tools helped me overcome challenges, understand certain development concepts better and turn my original ideas for UMCIMBI into a working mobile application.
+
+## References
+
+Cloudinary (2026) Cloudinary Dashboard. 
+Available at: https://console.cloudinary.com/app/c-b5c1c1770a1b2a55c3284b44fe18b8/home/dashboard  
+[Accessed: 6 November 2026]
+
+GitHub Link:
+
+Google Drive Demonstration Video Link:
+
+Google (2026) Firebase Firestore Database – Event Requests. 
+Available at: https://console.firebase.google.com/project/umcimbi/firestore/databases/-default-/data/~2FeventRequests~2FFv0LUt0tXK8ZRR0zUzCE  
+[Accessed: 6 November 2026]
+
+Google Stitch. (2026) Project 18066215840905218914 [Online Project].  
+Available at: https://stitch.withgoogle.com/projects/18066215840905218914
+[Accessed: 24 August 2026]
+
