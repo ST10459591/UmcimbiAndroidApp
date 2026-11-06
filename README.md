@@ -346,9 +346,9 @@ Cloudinary (2026) Cloudinary Dashboard.
 Available at: https://console.cloudinary.com/app/c-b5c1c1770a1b2a55c3284b44fe18b8/home/dashboard  
 [Accessed: 6 November 2026]
 
-GitHub Link:
+GitHub Link: https://github.com/ST10459591/UmcimbiAndroidApp.git
 
-Google Drive Demonstration Video Link:
+Google Drive Demonstration Video Link: https://drive.google.com/file/d/1sMidNT0tB270aQGTmDTiIGl3aOPCQjtp/view?usp=drivesdk
 
 Google (2026) Firebase Firestore Database – Event Requests. 
 Available at: https://console.firebase.google.com/project/umcimbi/firestore/databases/-default-/data/~2FeventRequests~2FFv0LUt0tXK8ZRR0zUzCE  
