@@ -2,8 +2,15 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Internet Permission -->
     <uses-permission
         android:name="android.permission.INTERNET" />
+
+    <!-- Notifications Permission (Android 13+) -->
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -13,41 +20,127 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UmcimbiSA">
 
+        <!-- MainActivity -->
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".CategoriesActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".SearchActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="true">
 
             <intent-filter>
-
                 <action
                     android:name="android.intent.action.MAIN" />
 
                 <category
                     android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
 
         </activity>
+
+        <!-- Login Screen -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <!-- Registration Screen -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+        <!-- Home Screen -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+
+        <!-- Categories Screen -->
+        <activity
+            android:name=".CategoriesActivity"
+            android:exported="false" />
+
+        <!-- Search Screen -->
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+
+        <!-- Settings Screen -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+
+        <!-- Profile Screen -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <!-- Provider List -->
+        <activity
+            android:name=".ProviderListActivity"
+            android:exported="false" />
+
+        <!-- Provider Details -->
+        <activity
+            android:name=".ProviderDetailActivity"
+            android:exported="false" />
+
+        <!-- Messaging -->
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+
+        <!-- Booking Request -->
+        <activity
+            android:name=".BookingRequestActivity"
+            android:exported="false" />
+
+        <!-- Customer Bookings -->
+        <activity
+            android:name=".MyBookingsActivity"
+            android:exported="false" />
+
+        <!-- Provider Bookings -->
+        <activity
+            android:name=".ProviderBookingsActivity"
+            android:exported="false" />
+
+        <!-- Favourites -->
+        <activity
+            android:name=".FavouritesActivity"
+            android:exported="false" />
+
+        <!-- Firebase Messaging Service -->
+        <service
+            android:name=".UmcimbiMessagingService"
+            android:exported="false">
+
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+        </service>
+
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+
+        </service>
+
+        <activity
+            android:name=".MessagesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProviderDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProviderBusinessActivity"
+            android:exported="false" />
+
 
     </application>
 

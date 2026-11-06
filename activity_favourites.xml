@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F3F3">
+
+    <!-- BACKGROUND AREA -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- UMCIMBI LOGO BACKGROUND -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/musicenter"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null" />
+
+        <!-- SOFT WHITE OVERLAY -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CCFFFFFF" />
+
+        <!-- MAIN CONTENT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- BACK BUTTON -->
+            <TextView
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bookings_back"
+                android:textSize="20sp"
+                android:textColor="#111111"
+                android:paddingBottom="20dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- PAGE TITLE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_favourites_title"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#111111"
+                android:layout_marginBottom="20dp" />
+
+            <!-- SAVED PROVIDERS -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/favouritesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- BOTTOM NAVIGATION -->
+    <include layout="@layout/layout_bottom_navigation" />
+
+</LinearLayout>

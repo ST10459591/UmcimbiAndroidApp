@@ -1,140 +1,135 @@
+
 package com.example.umcimbisa
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import com.example.umcimbisa.api.RetrofitClient
-import kotlinx.coroutines.launch
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Source
+import java.util.Locale
 
 class SearchActivity : AppCompatActivity() {
 
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_search)
 
-        setContentView(
-            R.layout.activity_search
-        )
-
-        val backButton =
-            findViewById<TextView>(
-                R.id.backButton
-            )
-
-        val categoryInput =
-            findViewById<EditText>(
-                R.id.categoryInput
-            )
-
-        val searchButton =
-            findViewById<Button>(
-                R.id.searchButton
-            )
-
-        val results =
-            findViewById<TextView>(
-                R.id.resultsText
-            )
-
-        val selectedCategory =
-            intent.getStringExtra("category")
-
-        if (!selectedCategory.isNullOrEmpty()) {
-
-            categoryInput.setText(
-                selectedCategory
-            )
-        }
+        val backButton = findViewById<TextView>(R.id.backButton)
+        val categoryInput = findViewById<EditText>(R.id.categoryInput)
+        val searchButton = findViewById<Button>(R.id.searchButton)
+        val results = findViewById<TextView>(R.id.resultsText)
 
         backButton.setOnClickListener {
             finish()
         }
 
-        searchButton.setOnClickListener {
+        val selectedCategory = intent.getStringExtra("category")
 
-            val category =
-                categoryInput.text
-                    .toString()
-                    .trim()
+        if (!selectedCategory.isNullOrEmpty()) {
+            categoryInput.setText(selectedCategory)
+        }
 
-            if (category.isEmpty()) {
+        fun searchServices() {
 
-                categoryInput.error =
-                    "Enter a category"
+            val searchTerm = categoryInput.text.toString().trim()
 
+            if (searchTerm.isEmpty()) {
+                categoryInput.error = "Enter a service or business name"
                 categoryInput.requestFocus()
-
-                return@setOnClickListener
+                return
             }
 
             searchButton.isEnabled = false
+            results.text = "Searching for providers..."
 
-            results.text =
-                "Connecting to REST API..."
+            // Get actual registered businesses from Firebase
+            db.collection("providers")
+                .get(Source.SERVER)
+                .addOnSuccessListener { documents ->
 
-            lifecycleScope.launch {
+                    val matchingProviders = documents.filter { document ->
 
-                try {
+                        val businessName =
+                            document.getString("businessName").orEmpty()
 
-                    val providers =
-                        RetrofitClient
-                            .apiService
-                            .getUsers()
+                        val category =
+                            document.getString("category").orEmpty()
 
-                    val builder =
-                        StringBuilder()
+                        val location =
+                            document.getString("location").orEmpty()
 
-                    builder.append(
-                        "Results for "
-                    )
-
-                    builder.append(category)
-
-                    builder.append("\n\n")
-
-                    providers.forEach { provider ->
-
-                        builder.append(
-                            provider.name
-                        )
-
-                        builder.append("\n")
-
-                        builder.append(
-                            provider.email
-                        )
-
-                        builder.append("\n")
-
-                        builder.append(
-                            provider.phone
-                        )
-
-                        builder.append("\n\n")
+                        businessName.contains(searchTerm, ignoreCase = true) ||
+                                category.contains(searchTerm, ignoreCase = true) ||
+                                location.contains(searchTerm, ignoreCase = true)
+                    }.sortedBy {
+                        it.getString("businessName")
+                            .orEmpty()
+                            .lowercase(Locale.ROOT)
                     }
 
-                    results.text =
-                        builder.toString()
+                    if (matchingProviders.isEmpty()) {
+                        results.text =
+                            "No service providers found for \"$searchTerm\"."
+                    } else {
 
-                } catch (e: Exception) {
+                        val builder = StringBuilder()
 
-                    results.text =
-                        "Could not connect to the REST API."
+                        builder.append(
+                            "Results for: $searchTerm\n\n"
+                        )
 
-                    Toast.makeText(
-                        this@SearchActivity,
-                        "Network error",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        matchingProviders.forEachIndexed { index, document ->
 
-                } finally {
+                            val businessName =
+                                document.getString("businessName")
+                                    ?: "Unnamed Provider"
+
+                            val category =
+                                document.getString("category")
+                                    ?: "Not specified"
+
+                            val location =
+                                document.getString("location")
+                                    ?: "Not specified"
+
+                            val availability =
+                                document.getString("availability")
+                                    ?: "Not specified"
+
+                            builder.append("${index + 1}. $businessName\n")
+                            builder.append("Service: $category\n")
+                            builder.append("Location: $location\n")
+                            builder.append("Availability: $availability\n")
+                            builder.append("\n--------------------\n\n")
+                        }
+
+                        results.text = builder.toString()
+                    }
 
                     searchButton.isEnabled = true
                 }
-            }
+                .addOnFailureListener { exception ->
+
+                    results.text =
+                        "Unable to load providers from Firebase. " +
+                                "Please check your internet connection and try again."
+
+                    searchButton.isEnabled = true
+                }
+        }
+
+        searchButton.setOnClickListener {
+            searchServices()
+        }
+
+        // Automatically search if a category was passed
+        if (!selectedCategory.isNullOrEmpty()) {
+            searchServices()
         }
     }
 }

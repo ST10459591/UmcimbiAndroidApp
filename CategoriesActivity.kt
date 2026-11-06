@@ -2,7 +2,6 @@ package com.example.umcimbisa
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,52 +9,79 @@ class CategoriesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_categories)
 
-        setContentView(
-            R.layout.activity_categories
+        // BACK BUTTON
+        findViewById<TextView>(R.id.backButton)
+            .setOnClickListener {
+                finish()
+            }
+
+        // CATEGORY BUTTONS
+        val categories = mapOf(
+            R.id.cateringButton to "Catering",
+            R.id.venueButton to "Venues",
+            R.id.photographyButton to "Photography",
+            R.id.decorButton to "Decor",
+            R.id.musicButton to "Music & Entertainment",
+            R.id.transportButton to "Transport"
         )
 
-        val backButton =
-            findViewById<TextView>(
-                R.id.backButton
-            )
+        categories.forEach { (categoryId, categoryName) ->
 
-        backButton.setOnClickListener {
-            finish()
-        }
+            findViewById<TextView>(categoryId)
+                .setOnClickListener {
 
-        val buttons = listOf(
-            R.id.cateringButton,
-            R.id.venueButton,
-            R.id.photographyButton,
-            R.id.decorButton,
-            R.id.musicButton,
-            R.id.transportButton
-        )
-
-        buttons.forEach { buttonId ->
-
-            findViewById<Button>(buttonId)
-                .setOnClickListener { button ->
-
-                    val category =
-                        (button as Button)
-                            .text
-                            .toString()
-
-                    val intent =
-                        Intent(
-                            this,
-                            SearchActivity::class.java
-                        )
-
-                    intent.putExtra(
-                        "category",
-                        category
+                    val intent = Intent(
+                        this,
+                        ProviderListActivity::class.java
                     )
 
+                    intent.putExtra("category", categoryName)
                     startActivity(intent)
                 }
         }
+
+        // BOTTOM NAVIGATION
+        findViewById<TextView>(R.id.navHomeButton)
+            .setOnClickListener {
+                openPage(HomeActivity::class.java)
+            }
+
+        // ALREADY ON EXPLORE
+        findViewById<TextView>(R.id.navExploreButton)
+            .setOnClickListener {
+                // Stay on Categories
+            }
+
+        findViewById<TextView>(R.id.navBookingsButton)
+            .setOnClickListener {
+                openPage(MyBookingsActivity::class.java)
+            }
+
+        findViewById<TextView>(R.id.navProfileButton)
+            .setOnClickListener {
+                openPage(ProfileActivity::class.java)
+            }
+
+        // MESSAGES
+        findViewById<TextView>(R.id.navMessagesButton)
+            .setOnClickListener {
+                openPage(MessagesActivity::class.java)
+            }
+
+    }
+
+    private fun openPage(
+        destination: Class<out android.app.Activity>
+    ) {
+        if (destination == this::class.java) return
+
+        val intent = Intent(this, destination)
+        intent.addFlags(
+            Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                    Intent.FLAG_ACTIVITY_SINGLE_TOP
+        )
+        startActivity(intent)
     }
 }

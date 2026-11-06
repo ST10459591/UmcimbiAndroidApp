@@ -1,153 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8F8F8">
+    android:layout_height="match_parent">
+
+    <!-- FULL SCREEN BACKGROUND IMAGE -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/home"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/home_background" />
+
+
+    <!-- MAIN HOMEPAGE LAYOUT -->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/transparent">
 
-        <!-- HEADER -->
+        <!-- WHITE HEADER -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:background="#FFFFFF">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="UMCIMBI"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#111111" />
+
+            <!-- LANGUAGE SELECTOR -->
+
+            <TextView
+                android:id="@+id/languageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EN  ▾"
+                android:textSize="13sp"
                 android:textColor="#111111"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/select_language" />
 
         </LinearLayout>
 
-        <View
+        <!-- SCROLLABLE MAIN CONTENT -->
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#DDDDDD" />
-
-        <!-- CONTENT -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Welcome to UMCIMBI"
-                android:textColor="#111111"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="6dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Find everything you need for your event."
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:layout_marginBottom="28dp" />
-
-            <!-- FIND SERVICES -->
-
-            <Button
-                android:id="@+id/searchServicesButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Find Event Services"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:background="@drawable/bg_button_black"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="12dp" />
-
-            <!-- CATEGORIES -->
-
-            <Button
-                android:id="@+id/categoriesButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Browse Categories"
-                android:textAllCaps="false"
-                android:textColor="#111111"
-                android:textStyle="bold"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="20dp" />
-
-            <!-- SETTINGS CARD -->
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:background="@android:color/transparent">
 
             <LinearLayout
-                android:id="@+id/settingsButton"
                 android:layout_width="match_parent"
-                android:layout_height="82dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="12dp"
-                android:background="#FFFFFF"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- WELCOME HEADING -->
 
                 <TextView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:gravity="center"
-                    android:text="⚙"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plan_event"
+                    android:textColor="#FFFFFF"
+                    android:textSize="29sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_subtitle"
+                    android:textColor="#BBBBBB"
+                    android:textSize="17sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="22dp" />
+
+                <!-- SEARCH BUTTON -->
+
+                <Button
+                    android:id="@+id/searchServicesButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="@string/search_event_services"
+                    android:textAllCaps="false"
                     android:textColor="#111111"
-                    android:textSize="24sp" />
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_marginBottom="28dp" />
+
+                <!-- EXPLORE EVENTS -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/explore_events"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="14dp" />
+
+                <!-- EVENT ROW 1 -->
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="12dp">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- WEDDINGS -->
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="My Settings"
-                        android:textColor="#111111"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/weddings"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#FFFFFF"
+                        android:background="#343434"
+                        android:layout_marginEnd="6dp" />
+
+                    <!-- BIRTHDAYS -->
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Manage your account"
-                        android:textColor="#666666"
-                        android:textSize="13sp" />
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/birthdays"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#FFFFFF"
+                        android:background="#343434"
+                        android:layout_marginStart="6dp" />
 
                 </LinearLayout>
 
+                <!-- EVENT ROW 2 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="28dp">
+
+                    <!-- CORPORATE EVENTS -->
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/corporate_events"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#FFFFFF"
+                        android:background="#343434"
+                        android:layout_marginEnd="6dp" />
+
+                    <!-- GRADUATIONS -->
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/graduations"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="#FFFFFF"
+                        android:background="#343434"
+                        android:layout_marginStart="6dp" />
+
+                </LinearLayout>
+
+                <!-- SERVICES SECTION -->
+
                 <TextView
-                    android:layout_width="32dp"
-                    android:layout_height="48dp"
-                    android:gravity="center"
-                    android:text="›"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/find_your_service"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="14dp" />
+
+                <!-- BROWSE CATEGORIES BUTTON -->
+
+                <Button
+                    android:id="@+id/categoriesButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="@string/browse_all_categories"
+                    android:textAllCaps="false"
                     android:textColor="#111111"
-                    android:textSize="26sp" />
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_marginBottom="20dp" />
 
             </LinearLayout>
+
+        </ScrollView>
+
+        <!-- BOTTOM NAVIGATION BAR -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="#FFFFFF">
+
+            <!-- HOME -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/nav_home"
+                android:textColor="#111111"
+                android:textSize="12sp" />
+
+            <!-- EXPLORE -->
+
+            <TextView
+                android:id="@+id/exploreButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/nav_explore"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- BOOKINGS -->
+
+            <TextView
+                android:id="@+id/bookingsButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/nav_bookings"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- MESSAGES -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/nav_messages"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <!-- PROFILE -->
+
+            <TextView
+                android:id="@+id/profileButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/nav_profile"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:clickable="true"
+                android:focusable="true" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</FrameLayout>

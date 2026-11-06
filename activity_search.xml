@@ -1,146 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8">
+    android:background="#F3F3F3">
 
-    <LinearLayout
+    <!-- BACKGROUND IMAGE -->
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:src="@drawable/venues"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:gravity="center_vertical"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
-            android:background="#FFFFFF">
+    <!-- SOFT WHITE OVERLAY -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCFFFFFF" />
 
-            <TextView
-                android:id="@+id/backButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="‹"
-                android:textColor="#111111"
-                android:textSize="32sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="UMCIMBI"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#DDDDDD" />
+    <!-- SCROLLABLE CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
-            <TextView
+            <!-- HEADER -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Find Event Services"
-                android:textColor="#111111"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="6dp" />
+                android:layout_height="64dp"
+                android:gravity="center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:background="#FFFFFF">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Find the right services for your event."
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:layout_marginBottom="28dp" />
+                <TextView
+                    android:id="@+id/backButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="‹"
+                    android:textColor="#111111"
+                    android:textSize="32sp"
+                    android:contentDescription="@string/back" />
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="UMCIMBI"
+                    android:textColor="#111111"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <!-- MAIN CONTENT -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#FFFFFF"
-                android:padding="16dp">
+                android:padding="20dp">
 
+                <!-- PAGE TITLE -->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CATEGORY"
-                    android:textColor="#222222"
-                    android:textSize="11sp"
+                    android:text="@string/find_event_services"
+                    android:textColor="#111111"
+                    android:textSize="28sp"
                     android:textStyle="bold"
+                    android:layout_marginTop="12dp"
                     android:layout_marginBottom="8dp" />
 
-                <EditText
-                    android:id="@+id/categoryInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="Search providers"
-                    android:inputType="text"
-                    android:singleLine="true"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:background="@drawable/bg_input"
-                    android:layout_marginBottom="14dp" />
-
-                <Button
-                    android:id="@+id/searchButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="Search"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="@drawable/bg_button_black"
-                    android:stateListAnimator="@null" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SEARCH RESULTS"
-                android:textColor="#111111"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:layout_marginTop="28dp"
-                android:layout_marginBottom="10dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:padding="16dp">
-
+                <!-- DESCRIPTION -->
                 <TextView
-                    android:id="@+id/resultsText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Search results will appear here."
+                    android:text="@string/search_description"
                     android:textColor="#666666"
-                    android:textSize="13sp" />
+                    android:textSize="14sp"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- SEARCH CARD -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_event_services"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="14dp" />
+
+                    <!-- SEARCH INPUT -->
+                    <EditText
+                        android:id="@+id/categoryInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="@string/search_services_hint"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="#111111"
+                        android:textColorHint="#888888"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:background="@drawable/bg_input"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- SEARCH BUTTON -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/searchButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="@string/search_button_label"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_button_black"
+                        app:backgroundTint="@null"
+                        android:stateListAnimator="@null" />
+
+                </LinearLayout>
+
+                <!-- RESULTS HEADER -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_results_heading"
+                    android:textColor="#111111"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- RESULTS CARD -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/resultsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_results_placeholder"
+                        android:textColor="#666666"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="6dp" />
+
+                </LinearLayout>
+
+                <!-- FOOTER MESSAGE -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_footer"
+                    android:textColor="#777777"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</FrameLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <!-- HOME -->
+    <TextView
+        android:id="@+id/navHomeButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/nav_home"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- EXPLORE -->
+    <TextView
+        android:id="@+id/navExploreButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/nav_explore"
+        android:textColor="#111111"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- BOOKINGS -->
+    <TextView
+        android:id="@+id/navBookingsButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/nav_bookings"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- MESSAGES -->
+    <TextView
+        android:id="@+id/navMessagesButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/nav_messages"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- PROFILE -->
+    <TextView
+        android:id="@+id/navProfileButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/nav_profile"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>

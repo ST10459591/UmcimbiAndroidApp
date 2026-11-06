@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3">
+
+    <!-- BACKGROUND PICTURE -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/transport"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null" />
+
+    <!-- WHITE OVERLAY -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCFFFFFF" />
+
+    <!-- BOOKING FORM -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- BACK BUTTON -->
+            <TextView
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="‹ Back"
+                android:textColor="#111111"
+                android:textSize="20sp"
+                android:paddingBottom="24dp" />
+
+            <!-- PAGE TITLE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Request a Booking"
+                android:textColor="#111111"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- PROVIDER NAME -->
+            <TextView
+                android:id="@+id/providerNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selected provider"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- EVENT TYPE -->
+            <EditText
+                android:id="@+id/eventTypeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Event type (e.g. Wedding)"
+                android:inputType="textCapWords"
+                android:layout_marginBottom="16dp" />
+
+            <!-- EVENT DATE -->
+            <EditText
+                android:id="@+id/eventDateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Event date (YYYY-MM-DD)"
+                android:focusable="false"
+                android:clickable="true"
+                android:layout_marginBottom="16dp" />
+
+            <!-- EVENT LOCATION -->
+            <EditText
+                android:id="@+id/locationInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Event location"
+                android:inputType="textCapWords"
+                android:layout_marginBottom="16dp" />
+
+            <!-- NUMBER OF GUESTS -->
+            <EditText
+                android:id="@+id/guestsInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Number of guests"
+                android:inputType="number"
+                android:layout_marginBottom="16dp" />
+
+            <!-- BUDGET -->
+            <EditText
+                android:id="@+id/budgetInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Budget (R)"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="24dp" />
+
+            <!-- SUBMIT BUTTON -->
+            <Button
+                android:id="@+id/submitBookingButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Submit Booking Request"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#222222" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

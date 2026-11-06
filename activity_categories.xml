@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8F8F8">
+    android:layout_height="match_parent">
 
+    <!-- BACKGROUND IMAGE -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/categories"
+        android:scaleType="centerCrop"
+        android:contentDescription="UMCIMBI Categories Background" />
+
+    <!-- MAIN LAYOUT -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- HEADER -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:orientation="horizontal"
             android:gravity="center_vertical"
             android:paddingStart="18dp"
             android:paddingEnd="18dp"
@@ -26,7 +35,10 @@
                 android:gravity="center"
                 android:text="‹"
                 android:textSize="32sp"
-                android:textColor="#111111" />
+                android:textColor="#111111"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/back" />
 
             <TextView
                 android:layout_width="0dp"
@@ -34,100 +46,202 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="UMCIMBI"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#111111" />
 
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
-
         </LinearLayout>
 
-        <LinearLayout
+        <!-- SCROLLABLE CONTENT -->
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:background="@android:color/transparent">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Categories"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="#111111"
-                android:layout_marginBottom="6dp" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Choose a service for your event."
-                android:textSize="13sp"
-                android:textColor="#666666"
-                android:layout_marginBottom="24dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/explore_categories"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#555555"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp" />
 
-            <Button
-                android:id="@+id/cateringButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Catering"
-                android:textAllCaps="false"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="10dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/categories_description"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="28dp" />
 
-            <Button
-                android:id="@+id/venueButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Venues"
-                android:textAllCaps="false"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="10dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/browse_services"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="16dp" />
 
-            <Button
-                android:id="@+id/photographyButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Photography"
-                android:textAllCaps="false"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="10dp" />
+                <!-- FIRST ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
 
-            <Button
-                android:id="@+id/decorButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Decor"
-                android:textAllCaps="false"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="10dp" />
+                    <TextView
+                        android:id="@+id/cateringButton"
+                        android:layout_width="0dp"
+                        android:layout_height="115dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="@string/category_catering"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:gravity="center"
+                        android:background="#EAEAEA"
+                        android:clickable="true"
+                        android:focusable="true" />
 
-            <Button
-                android:id="@+id/musicButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Music &amp; Entertainment"
-                android:textAllCaps="false"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null"
-                android:layout_marginBottom="10dp" />
+                    <TextView
+                        android:id="@+id/venueButton"
+                        android:layout_width="0dp"
+                        android:layout_height="115dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/category_venues"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:gravity="center"
+                        android:background="#EAEAEA"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
 
-            <Button
-                android:id="@+id/transportButton"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Transport"
-                android:textAllCaps="false"
-                android:background="@drawable/bg_button_outline"
-                android:stateListAnimator="@null" />
+                <!-- SECOND ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/photographyButton"
+                        android:layout_width="0dp"
+                        android:layout_height="115dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="@string/category_photography"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:gravity="center"
+                        android:background="#EAEAEA"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/decorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="115dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/category_decor"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:gravity="center"
+                        android:background="#EAEAEA"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <!-- THIRD ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:id="@+id/musicButton"
+                        android:layout_width="0dp"
+                        android:layout_height="115dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="@string/category_music"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:background="#EAEAEA"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/transportButton"
+                        android:layout_width="0dp"
+                        android:layout_height="115dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/category_transport"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:gravity="center"
+                        android:background="#EAEAEA"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <!-- INFORMATION CARD -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp"
+                    android:background="#EAEAEA">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/planning_special"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/planning_description"
+                        android:textSize="13sp"
+                        android:textColor="#555555" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- BOTTOM NAVIGATION -->
+        <include layout="@layout/layout_bottom_navigation" />
 
     </LinearLayout>
 
-</ScrollView>
+</FrameLayout>

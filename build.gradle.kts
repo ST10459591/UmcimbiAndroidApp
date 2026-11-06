@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -48,6 +49,12 @@ dependencies {
             "com.google.firebase:firebase-bom:34.19.0"
         )
     )
+
+    implementation("androidx.credentials:credentials:1.5.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.5.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 
     implementation(
         "com.google.firebase:firebase-auth"
@@ -99,6 +106,17 @@ dependencies {
     implementation(
         "androidx.lifecycle:lifecycle-runtime-ktx:2.9.2"
     )
+
+    // Room Database - Offline Storage
+    implementation("androidx.room:room-runtime:2.8.4")
+    implementation("androidx.room:room-ktx:2.8.4")
+    ksp("androidx.room:room-compiler:2.8.4")
+
+    // Cloudinary - Business Photo Uploads
+    implementation("com.cloudinary:cloudinary-android:3.1.2")
+
+    // Glide - Display Cloudinary Photos
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // Testing
     testImplementation(
